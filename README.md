@@ -24,8 +24,19 @@ npm run dev
 
 ### The database contains two tables: 
 
-	- Users (<u>id</u>, username, age, email, address, post)
-	- Posts (<u>id</u>, title, post, created_at, updated_at, user_id)
+ - Users (<u>id</u>, username, age, email, address, post)
+    	- id - Int <- primary key, unique, autoincrement
+    	- username - String <- unique
+    	- age - Int 
+    	- emial - String <- unique
+    	- address - String
+ - Posts (<u>id</u>, title, post, created_at, updated_at, user_id)
+    	- id - Int <- primary key, unique, autoincrement
+    	- title - String
+    	- post - String
+    	- created_at - DateTime <- @default(now())
+    	- updated_at - DateTime <- @updatedAt
+    	- user_id - Int <- foreign key
 
 >   **User_id** is a foreign key in the Posts table and a primary key in Users table. 
 >
