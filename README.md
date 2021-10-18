@@ -4,7 +4,7 @@ This is a simple REST API using [Prisma](https://www.prisma.io/), [MySQL](https:
 
 > Npm packages: (nodemon, prisma, @prisma/client, express)
 
-This little project demonstrates the basic use of Prisma&MySQL.
+This little project demonstrates the basic use of Prisma&MySQL when building a REST API using Express.
 
 ## To start
 
