@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  @@map(name: "users")
+  id       Int    @id @default(autoincrement())
+  username String @unique @db.VarChar(255)
+  email String @unique
+  age Int
+  address String @db.VarChar(255)
+  post Posts[]
+}
+
+  model Posts {
+    @@map(name: "posts")
+    id Int @id @default(autoincrement())
+    title String 
+    post String @db.VarChar(500)
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+    user Users @relation(fields: [user_id], references: [id])
+    user_id Int 
+}
+
+// use `npx prisma studio` to open the GUI to see the tables
